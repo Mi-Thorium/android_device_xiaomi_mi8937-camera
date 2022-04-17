@@ -902,10 +902,12 @@ typedef struct {
     INCLUDE(CAM_INTF_PARM_BESTSHOT_MODE,                uint32_t,                    1);
     INCLUDE(CAM_INTF_PARM_DIS_ENABLE,                   int32_t,                     1);
     INCLUDE(CAM_INTF_PARM_LED_MODE,                     int32_t,                     1);
+    INCLUDE(XM_UNKNOWN_01, uint32_t, 2);
     INCLUDE(CAM_INTF_META_LED_MODE_OVERRIDE,            uint32_t,                    1);
 
     /* dual camera specific params */
     INCLUDE(CAM_INTF_PARM_RELATED_SENSORS_CALIBRATION,  cam_related_system_calibration_data_t, 1);
+    INCLUDE(XM_01, uint32_t, 8);
     INCLUDE(CAM_INTF_META_AF_FOCAL_LENGTH_RATIO,        cam_focal_length_ratio_t, 1);
     INCLUDE(CAM_INTF_META_SNAP_CROP_INFO_SENSOR,        cam_stream_crop_info_t,   1);
     INCLUDE(CAM_INTF_META_SNAP_CROP_INFO_CAMIF,         cam_stream_crop_info_t,   1);

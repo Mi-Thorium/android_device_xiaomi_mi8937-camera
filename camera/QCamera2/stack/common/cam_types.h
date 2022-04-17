@@ -1248,6 +1248,7 @@ typedef struct {
     cam_dimension_t fd_frame_dim;              /* frame dims on which fd is applied */
     uint8_t update_flag;                       /* flag to inform whether HAL needs to send cb
                                                 * to app or not */
+    char xm_02[160];
 } cam_face_detection_data_t;
 
 // definition of composite face detection data
@@ -1465,6 +1466,7 @@ typedef enum {
 typedef struct {
   uint32_t is_hdr_scene;
   float    hdr_confidence;
+  uint32_t xm_03;
 } cam_asd_hdr_scene_data_t;
 
 typedef struct {
@@ -1527,6 +1529,8 @@ typedef struct {
     int32_t est_snap_iso_value;
     uint32_t est_snap_luma;
     uint32_t est_snap_target;
+    uint32_t xm_04_1;
+    uint32_t xm_04_2;
 } cam_3a_params_t;
 
 typedef struct {
@@ -2152,6 +2156,7 @@ typedef enum {
     /* parameters added for related cameras */
     /* fetch calibration info for related cam subsystem */
     CAM_INTF_PARM_RELATED_SENSORS_CALIBRATION,
+XM_01,
     /* focal length ratio info */
     CAM_INTF_META_AF_FOCAL_LENGTH_RATIO,
     /* crop for binning & FOV adjust */
@@ -2234,7 +2239,10 @@ typedef enum {
     CAM_INTF_META_SPOT_LIGHT_DETECT,
     /* HAL based HDR*/
     CAM_INTF_PARM_HAL_BRACKETING_HDR,
-    CAM_INTF_PARM_MAX
+
+XM_UNKNOWN_01,
+
+    CAM_INTF_PARM_MAX = 236
 } cam_intf_parm_type_t;
 
 typedef struct {
