@@ -302,6 +302,7 @@ typedef struct{
     size_t supported_picture_fmt_cnt;
     cam_format_t supported_picture_fmts[CAM_FORMAT_MAX];
 
+volatile char         xiaomi_reserved1[4];
     uint8_t max_downscale_factor;
 
     /* dimension and supported output format of raw dump from camif */
