@@ -772,6 +772,9 @@ typedef struct {
     custom_parm_data_t data;
 } custom_parm_buffer_t;
 
+typedef struct {
+    char xm_01[32];
+} xm_01_t;
 
 typedef struct {
 /**************************************************************************************
@@ -806,6 +809,8 @@ typedef struct {
     INCLUDE(CAM_INTF_META_CHROMATIX_LITE_AF,            cam_chromatix_lite_af_stats_t,  1);
     INCLUDE(CAM_INTF_META_CHROMATIX_LITE_ASD,           cam_chromatix_lite_asd_stats_t, 1);
     INCLUDE(CAM_INTF_BUF_DIVERT_INFO,                   cam_buf_divert_info_t,          1);
+
+INCLUDE(XM_02, uint32_t, 1);
 
     /* Specific to HAL3 */
     INCLUDE(CAM_INTF_META_FRAME_NUMBER_VALID,           int32_t,                     1);
@@ -895,6 +900,7 @@ typedef struct {
 
     /* dual camera specific params */
     INCLUDE(CAM_INTF_PARM_RELATED_SENSORS_CALIBRATION,  cam_related_system_calibration_data_t, 1);
+INCLUDE(XM_01, xm_01_t, 1);
     INCLUDE(CAM_INTF_META_AF_FOCAL_LENGTH_RATIO,        cam_focal_length_ratio_t, 1);
     INCLUDE(CAM_INTF_META_SNAP_CROP_INFO_SENSOR,        cam_stream_crop_info_t,   1);
     INCLUDE(CAM_INTF_META_SNAP_CROP_INFO_CAMIF,         cam_stream_crop_info_t,   1);

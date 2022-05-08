@@ -122,7 +122,7 @@
 
 #define RELCAM_CALIB_ROT_MATRIX_MAX 9
 #define RELCAM_CALIB_SURFACE_PARMS_MAX 32
-#define RELCAM_CALIB_RESERVED_MAX 50
+#define RELCAM_CALIB_RESERVED_MAX 563
 
 #define MAX_NUM_CAMERA_PER_BUNDLE    2 /* Max number of cameras per bundle */
 #define EXTRA_FRAME_SYNC_BUFFERS     4 /* Extra frame sync buffers in dc mode*/
@@ -1049,6 +1049,7 @@ typedef struct {
         cam_coordinate_type_t coordinate[MAX_ROI];
         uint32_t aec_roi_idx[MAX_ROI];
     } cam_aec_roi_position;
+  uint32_t xiaomi_1;
 } cam_set_aec_roi_t;
 
 typedef struct {
@@ -2152,6 +2153,7 @@ typedef enum {
     /* parameters added for related cameras */
     /* fetch calibration info for related cam subsystem */
     CAM_INTF_PARM_RELATED_SENSORS_CALIBRATION,
+XM_01,
     /* focal length ratio info */
     CAM_INTF_META_AF_FOCAL_LENGTH_RATIO,
     /* crop for binning & FOV adjust */
@@ -2171,6 +2173,7 @@ typedef enum {
     /*Frame divert info from ISP*/
     CAM_INTF_BUF_DIVERT_INFO,
     /* Use AV timer */
+XM_02,
     CAM_INTF_META_USE_AV_TIMER,
     CAM_INTF_META_EFFECTIVE_EXPOSURE_FACTOR,
     /* Special event to request stream frames*/
@@ -2234,7 +2237,7 @@ typedef enum {
     CAM_INTF_META_SPOT_LIGHT_DETECT,
     /* HAL based HDR*/
     CAM_INTF_PARM_HAL_BRACKETING_HDR,
-    CAM_INTF_PARM_MAX
+    CAM_INTF_PARM_MAX = 236
 } cam_intf_parm_type_t;
 
 typedef struct {
